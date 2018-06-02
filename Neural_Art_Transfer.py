@@ -20,3 +20,21 @@ content_image = scipy.misc.imread("images/louvre.jpg")
 imshow(content_image)
 
 
+# GRADED FUNCTION: compute_content_cost
+
+def compute_content_cost(a_C, a_G):
+    """
+    Computes the content cost
+
+    Arguments:
+    a_C -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing content of the image C
+    a_G -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing content of the image G
+
+    Returns:
+    J_content -- scalar that you compute using equation 1 above.
+    """
+
+    ### START CODE HERE ###
+    # Retrieve dimensions from a_G (≈1 line)
+    m, n_H, n_W, n_C = a_G.get_shape().as_list()
+
