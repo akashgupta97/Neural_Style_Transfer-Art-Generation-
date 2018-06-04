@@ -37,4 +37,13 @@ def compute_content_cost(a_C, a_G):
     ### START CODE HERE ###
     # Retrieve dimensions from a_G (≈1 line)
     m, n_H, n_W, n_C = a_G.get_shape().as_list()
+    # Reshape a_C and a_G (≈2 lines)
+    a_C_unrolled = tf.transpose(a_C)
+    a_G_unrolled = tf.transpose(a_G)
+
+    # compute the cost with tensorflow (≈1 line)
+    J_content = (1 / (4 * n_H * n_W * n_C)) * tf.reduce_sum(tf.pow((a_G_unrolled - a_C_unrolled), 2))
+    ### END CODE HERE ###
+
+    return J_content
 
