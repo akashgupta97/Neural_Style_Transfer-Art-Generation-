@@ -56,3 +56,6 @@ with tf.Session() as test:
     J_content = compute_content_cost(a_C, a_G)
     print("J_content = " + str(J_content.eval()))
 
+style_image = scipy.misc.imread("images/monet_800600.jpg")
+imshow(style_image)
+
