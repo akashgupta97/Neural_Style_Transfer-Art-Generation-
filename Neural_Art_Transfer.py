@@ -59,3 +59,21 @@ with tf.Session() as test:
 style_image = scipy.misc.imread("images/monet_800600.jpg")
 imshow(style_image)
 
+
+# GRADED FUNCTION: gram_matrix
+
+def gram_matrix(A):
+    """
+    Argument:
+    A -- matrix of shape (n_C, n_H*n_W)
+
+    Returns:
+    GA -- Gram matrix of A, of shape (n_C, n_C)
+    """
+
+    ### START CODE HERE ### (≈1 line)
+    GA = tf.matmul(A, tf.transpose(A))
+    ### END CODE HERE ###
+
+    return GA
+
