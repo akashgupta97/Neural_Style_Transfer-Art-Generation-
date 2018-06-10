@@ -77,3 +77,14 @@ def gram_matrix(A):
 
     return GA
 
+
+tf.reset_default_graph()
+
+with tf.Session() as test:
+    tf.set_random_seed(1)
+    A = tf.random_normal([3, 2 * 1], mean=1, stddev=4)
+    GA = gram_matrix(A)
+
+    print("GA = " + str(GA.eval()))
+
+
