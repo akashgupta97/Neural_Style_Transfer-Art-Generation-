@@ -88,3 +88,21 @@ with tf.Session() as test:
     print("GA = " + str(GA.eval()))
 
 
+    # GRADED FUNCTION: compute_layer_style_cost
+
+    def compute_layer_style_cost(a_S, a_G):
+        """
+        Arguments:
+        a_S -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing style of the image S
+        a_G -- tensor of dimension (1, n_H, n_W, n_C), hidden layer activations representing style of the image G
+
+        Returns:
+        J_style_layer -- tensor representing a scalar value, style cost defined above by equation (2)
+        """
+
+        ### START CODE HERE ###
+        # Retrieve dimensions from a_G (≈1 line)
+        m, n_H, n_W, n_C = a_G.get_shape().as_list()
+
+
+
