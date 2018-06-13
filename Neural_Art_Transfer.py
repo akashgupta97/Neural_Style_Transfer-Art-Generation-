@@ -103,6 +103,19 @@ with tf.Session() as test:
         ### START CODE HERE ###
         # Retrieve dimensions from a_G (≈1 line)
         m, n_H, n_W, n_C = a_G.get_shape().as_list()
+        # Reshape the images to have them of shape (n_H*n_W, n_C) (≈2 lines)
+        a_S = tf.transpose(tf.reshape(a_S, [n_H * n_W, n_C]))
+        a_G = tf.transpose(tf.reshape(a_G, [n_H * n_W, n_C]))
 
+        # Computing gram_matrices for both images S and G (≈2 lines)
+        GS = gram_matrix(a_S)
+        GG = gram_matrix(a_G)
+
+        # Computing the loss (≈1 line)
+        J_style_layer = (1. / (4 * n_C ** 2 * (n_H * n_W) ** 2)) * tf.reduce_sum(tf.pow((GS - GG), 2))
+
+        ### END CODE HERE ###
+
+        return J_style_layer
 
 
