@@ -130,3 +130,19 @@ with tf.Session() as test:
         print("J_style_layer = " + str(J_style_layer.eval()))
 
 
+
+
+    STYLE_LAYERS = [
+        ('conv1_1', 0.2),
+        ('conv2_1', 0.2),
+        ('conv3_1', 0.2),
+        ('conv4_1', 0.2),
+        ('conv5_1', 0.2)]
+
+
+
+        
+
+
+
+
