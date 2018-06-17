@@ -140,8 +140,23 @@ with tf.Session() as test:
         ('conv5_1', 0.2)]
 
 
+    def compute_style_cost(model, STYLE_LAYERS):
+        """
+        Computes the overall style cost from several chosen layers
 
-        
+        Arguments:
+        model -- our tensorflow model
+        STYLE_LAYERS -- A python list containing:
+                            - the names of the layers we would like to extract style from
+                            - a coefficient for each of them
+
+        Returns:
+        J_style -- tensor representing a scalar value, style cost defined above by equation (2)
+        """
+
+        # initialize the overall style cost
+        J_style = 0
+
 
 
 
