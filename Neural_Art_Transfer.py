@@ -194,7 +194,13 @@ with tf.Session() as test:
         J -- total cost as defined by the formula above.
         """
 
-        
+        ### START CODE HERE ### (≈1 line)
+        J = alpha * J_content + beta * J_style
+        ### END CODE HERE ###
+
+        return J
+
+    
 
 
 
