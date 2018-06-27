@@ -200,7 +200,15 @@ with tf.Session() as test:
 
         return J
 
-    
+
+    tf.reset_default_graph()
+
+    with tf.Session() as test:
+        np.random.seed(3)
+        J_content = np.random.randn()
+        J_style = np.random.randn()
+        J = total_cost(J_content, J_style)
+        print("J = " + str(J))
 
 
 
