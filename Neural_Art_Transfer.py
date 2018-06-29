@@ -210,6 +210,12 @@ with tf.Session() as test:
         J = total_cost(J_content, J_style)
         print("J = " + str(J))
 
+    # Reset the graph
+    tf.reset_default_graph()
+
+    # Start interactive session
+    sess = tf.InteractiveSession()
+
 
 
 
