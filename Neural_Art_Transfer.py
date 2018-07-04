@@ -216,6 +216,9 @@ with tf.Session() as test:
     # Start interactive session
     sess = tf.InteractiveSession()
 
+    content_image = scipy.misc.imread("images/louvre_small.jpg")
+    content_image = reshape_and_normalize_image(content_image)
+
 
 
 
