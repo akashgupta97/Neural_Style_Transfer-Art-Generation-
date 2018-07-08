@@ -225,6 +225,8 @@ with tf.Session() as test:
     generated_image = generate_noise_image(content_image)
     imshow(generated_image[0])
 
+    model = load_vgg_model("pretrained-model/imagenet-vgg-verydeep-19.mat")
+
 
 
 
