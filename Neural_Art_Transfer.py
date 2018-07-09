@@ -227,6 +227,15 @@ with tf.Session() as test:
 
     model = load_vgg_model("pretrained-model/imagenet-vgg-verydeep-19.mat")
 
+    # Assign the content image to be the input of the VGG model.
+    sess.run(model['input'].assign(content_image))
+
+    # Select the output tensor of layer conv4_2
+    out = model['conv4_2']
+
+    # Set a_C to be the hidden layer activation from the layer we have selected
+    a_C = sess.run(out)
+
 
 
 
