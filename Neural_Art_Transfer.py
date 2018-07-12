@@ -236,6 +236,14 @@ with tf.Session() as test:
     # Set a_C to be the hidden layer activation from the layer we have selected
     a_C = sess.run(out)
 
+    # Set a_G to be the hidden layer activation from same layer. Here, a_G references model['conv4_2']
+    # and isn't evaluated yet. Later in the code, we'll assign the image G as the model input, so that
+    # when we run the session, this will be the activations drawn from the appropriate layer, with G as input.
+    a_G = out
+
+    # Compute the content cost
+    J_content = compute_content_cost(a_C, a_G)
+
 
 
 
