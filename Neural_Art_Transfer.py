@@ -244,6 +244,12 @@ with tf.Session() as test:
     # Compute the content cost
     J_content = compute_content_cost(a_C, a_G)
 
+    # Assign the input of the model to be the "style" image
+    sess.run(model['input'].assign(style_image))
+
+    # Compute the style cost
+    J_style = compute_style_cost(model, STYLE_LAYERS)
+
 
 
 
