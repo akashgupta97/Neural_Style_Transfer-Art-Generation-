@@ -256,5 +256,13 @@ with tf.Session() as test:
 
 
 
+    # define optimizer (1 line)
+    optimizer = tf.train.AdamOptimizer(2.0)
+
+    # define train_step (1 line)
+    train_step = optimizer.minimize(J)
+
+
+
 
 
