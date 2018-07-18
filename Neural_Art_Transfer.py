@@ -263,6 +263,20 @@ with tf.Session() as test:
     train_step = optimizer.minimize(J)
 
 
+    def model_nn(sess, input_image, num_iterations=200):
+        # Initialize global variables (you need to run the session on the initializer)
+        ### START CODE HERE ### (1 line)
+        sess.run(tf.global_variables_initializer())
+        ### END CODE HERE ###
+
+        # Run the noisy input image (initial generated image) through the model. Use assign().
+        ### START CODE HERE ### (1 line)
+        sess.run(model['input'].assign(input_image))
+        ### END CODE HERE ###
+
+        
+
+
 
 
 
