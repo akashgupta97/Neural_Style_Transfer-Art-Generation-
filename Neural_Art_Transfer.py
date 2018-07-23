@@ -303,6 +303,9 @@ with tf.Session() as test:
         return generated_image
 
 
+    model_nn(sess, generated_image)
+
+
 
 
 
