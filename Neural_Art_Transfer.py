@@ -219,6 +219,7 @@ with tf.Session() as test:
     content_image = scipy.misc.imread("images/louvre_small.jpg")
     content_image = reshape_and_normalize_image(content_image)
 
+<<<<<<< HEAD
     style_image = scipy.misc.imread("images/monet.jpg")
     style_image = reshape_and_normalize_image(style_image)
 
@@ -305,6 +306,8 @@ with tf.Session() as test:
 
     model_nn(sess, generated_image)
 
+=======
+>>>>>>> db16c4ef808f360c9c2686592d9fdd455665c257
 
 
 
